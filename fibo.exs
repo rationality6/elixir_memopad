@@ -1,17 +1,59 @@
-defmodule Fibo do
-  def fibonacci(num) do
-    fibonacci(num, 1)
+defmodule Fib do
+  def fib(a, _, 0) do
+    a
   end
 
-  def fibonacci(0, cur) do
-    cur
-  end
-
-  def fibonacci(num, cur) do
-    fibonacci(num - 1, cur) + fibonacci(num - 2, cur)
+  def fib(a, b, n) do
+    fib(b, a + b, n - 1)
   end
 end
 
-IO.inspect(Fibo.fibonacci(10))
+IO.puts(Fib.fib(1, 1, 7))
 
-IO.inspect(Fibo.fibonacci(10))
+defmodule Fibonacci do
+  def find(nth) do
+    list = [1, 1]
+    fib(list, nth)
+  end
+
+  def fib(list, 2) do
+    Enum.reverse(list)
+  end
+
+  def fib(list, n) do
+    fib([hd(list) + hd(tl(list))] ++ list, n - 1)
+  end
+end
+
+IO.inspect(Fibonacci.find(10))
+
+defmodule Fibonacci_list_tail do
+  def find(nth) do
+    list = [1, 1]
+    fib(list, nth)
+  end
+
+  def fib(list, 2) do
+    Enum.reverse(list)
+  end
+
+  def fib(list, nth) do
+    fib([hd(list) + hd(tl(list))] ++ list, nth - 1)
+  end
+end
+
+IO.inspect(Fibonacci.find(55))
+
+list = [1, 2, 2, 3] ++ [5]
+IO.inspect(hd(tl(list)))
+
+defmodule Fib do
+  def find(0), do: 0
+  def find(1), do: 1
+
+  def find(nth) do
+    find(nth - 1) + find(nth - 2)
+  end
+end
+
+IO.inspect(Fib.find(20))
