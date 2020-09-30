@@ -1,9 +1,11 @@
 defmodule Practice do
   def fact_tail_recur(num) do
+    IO.inspect(num)
     fact_tail_recur(num, 1)
   end
 
   def fact_tail_recur(0, cur) do
+    IO.inspect(cur)
     cur
   end
 
