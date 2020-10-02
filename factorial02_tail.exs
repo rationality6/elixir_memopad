@@ -1,4 +1,4 @@
-defmodule Practice do
+ defmodule Practice do
   def fact_tail_recur(num) do
     IO.inspect(num)
     fact_tail_recur(num, 1)
