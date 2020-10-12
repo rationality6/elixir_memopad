@@ -6,7 +6,7 @@ defmodule Printererror do
   def count_wrong_colours(s) do
     s
     |> String.codepoints()
-    |> Enum.count(&(&1>"m"))
+    |> Enum.count(&(&1 > "m"))
   end
 end
 
@@ -16,4 +16,12 @@ Printererror.printer_error("abcddddeeeffgzzz")
 "asdfqwer"
 |> String.codepoints()
 |> Enum.count()
+|> IO.inspect()
+
+"asdf"
+|> String.split("")
+|> IO.inspect()
+
+"asdf"
+|> String.codepoints()
 |> IO.inspect()
