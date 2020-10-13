@@ -14,7 +14,9 @@
   end
 end
 
-IO.inspect(Practice.fact_tail_recur(5))
+5
+|> Practice.fact_tail_recur()
+|> IO.inspect()
 
 defmodule Factorial do
   def tail_recursive_factorial(n), do: tail_recursive_factorial(n, 1)
