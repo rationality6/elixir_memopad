@@ -25,3 +25,21 @@ Printererror.printer_error("abcddddeeeffgzzz")
 "asdf"
 |> String.codepoints()
 |> IO.inspect()
+
+"asdf"
+|> String.length()
+|> IO.inspect()
+
+1234
+|> Integer.digits()
+|> IO.inspect()
+|> Integer.undigits()
+|> IO.inspect()
+
+
+fun0 = fn (a) -> a > "m" end
+"asdf"
+|> String.codepoints()
+|> IO.inspect()
+|> Enum.count(fun0)
+|> IO.inspect()
