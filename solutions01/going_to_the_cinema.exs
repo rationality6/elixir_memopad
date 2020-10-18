@@ -16,7 +16,6 @@ defmodule Movie do
   def system_b_stream(card, ticket, percent) do
     Stream.iterate(percent, &(&1 * percent))
     |> Stream.scan(&Kernel.+/2)
-    |> IO.inspect
     |> Stream.map(&((&1 * ticket + card) |> Float.ceil()))
   end
 end
@@ -30,28 +29,28 @@ Movie.system_b_stream(500, 15, 0.9)
 |> Enum.take(5)
 |> IO.inspect()
 
+Movie.movie(500, 15, 0.9)
+|> IO.inspect()
+
 # 43
 
-1..5
-|> Stream.map(&(&1 * 2))
-|> Enum.take(2)
+defmodule Movie do
+  def movie(card, ticket, perc) do
+    system_a = system_a_stream(ticket)
+    system_b = system_b_stream(card, ticket, perc)
+  end
+
+  def system_a_stream(ticket) do
+    Stream.iterate(1, &(&1 + 1))
+    |> Stream.map(&(&1 * ticket))
+  end
+
+  def system_b_stream(card, ticket, percent) do
+    Stream.iterate(percent, &(&1 * percent))
+    |> Stream.scan(fn (a,b) -> a + b end)
+    |>IO.inspect()
+  end
+end
+
+Movie.system_b_stream(500, 17, 0.9)
 |> IO.inspect()
-
-1..3
-|> Enum.map(&IO.inspect(&1))
-|> Enum.map(&(&1 * 2))
-|> Enum.map(&IO.inspect(&1))
-
-stream =
-  1..3
-  |> Stream.map(&IO.inspect(&1))
-  |> Stream.map(&(&1 * 2))
-  |> Stream.map(&IO.inspect(&1))
-
-Enum.to_list(stream)
-|> IO.inspect()
-
-str =
-  Stream.iterate(1, &(&1 + 3))
-  |> Enum.take(5)
-  |> IO.inspect()
