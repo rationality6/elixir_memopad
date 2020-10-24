@@ -3,7 +3,7 @@ defmodule Programmers do
     Simple adder
   """
 
-  defp int(str) do
+  defp to_int(str) do
     Integer.parse(str) |> elem(0)
   end
 
@@ -11,7 +11,7 @@ defmodule Programmers do
   def solution(num_string) do
     num_string
     |> String.codepoints()
-    |> Enum.reduce(0, fn a, acc -> acc + int(a) end)
+    |> Enum.reduce(0, fn a, acc -> acc + to_int(a) end)
   end
 end
 
