@@ -33,4 +33,4 @@ end
 
 Lotto.로또_출력() |> IO.inspect()
 
-# Lotto.랜덤_로또_넘버() |> IO.inspect()
+Lotto.랜덤_로또_넘버() |> IO.inspect()
