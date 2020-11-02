@@ -17,4 +17,4 @@ defmodule PrimeFactors do
 end
 
 PrimeFactors.소인수분해_시작(63) |> IO.inspect(charlists: :as_list)
-PrimeFactors.소인수분해_시작(7) |> IO.inspect(charlists: :as_list)
+PrimeFactors.소인수분해_시작(4772) |> IO.inspect(charlists: :as_list)

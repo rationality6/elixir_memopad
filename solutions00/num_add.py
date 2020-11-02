@@ -15,3 +15,11 @@ print(solution(123))
 print(solution(987))
 print(solution(98799))
 print(solution(0))
+
+
+def eteration(num):
+    range0 = range(1,num)
+    for i in range0:
+        print(i)
+
+eteration(5)

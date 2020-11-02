@@ -30,19 +30,24 @@ defmodule StrongestEvenNumber do
     [48, 56]  -->  48
   """
 
-  require Integer
-
   def strongest_even(n, m) do
     n..m
-    |> Enum.filter(fn a -> if Integer.is_even(a), do: a end)
-    |>
+    |> Enum.to_list()
+    |> Enum.map(fn i -> divide_til(i, 0) end)
+    |> Enum.zip(n..m)
+    |> Enum.into(%{})
+    |> Enum.at(-1)
+    |> elem(1)
   end
 
-  def prime_facto(num) do
-    2..num
-    |> Enum.filter(fn i -> rem(num, i) == 0 end)
+  def divide_til(num, count) when rem(num, 2) == 1 do
+    count
+  end
+
+  def divide_til(num, count) when rem(num, 2) == 0 do
+    divide_til(div(num, 2), count + 1)
   end
 end
 
-StrongestEvenNumber.strongest_even(5, 10)
+StrongestEvenNumber.strongest_even(5, 16)
 |> IO.inspect()
