@@ -24,6 +24,7 @@ defmodule PrimeFactors do
 end
 
 PrimeFactors.factors_for(742_389_473_284) |> IO.inspect(charlists: :as_list)
+PrimeFactors.factors_for(67) |> IO.inspect(charlists: :as_list)
 # PrimeFactors.factors_for(7) |> IO.inspect(charlists: :as_list)
 
 # div(42,2) |> IO.inspect(charlists: :as_list)
