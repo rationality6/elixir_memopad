@@ -31,3 +31,8 @@ defmodule Parse do
 end
 
 Parse.param_to_integer("cat", 1) |> IO.inspect()
+
+Integer.parse("233 e") |> IO.inspect()
+Integer.parse("233 e3") |> IO.inspect()
+
+Integer.parse("") |> IO.inspect()
