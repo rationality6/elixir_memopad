@@ -15,11 +15,23 @@ defmodule SolutionTest do
 
   describe "유닛 테스트" do
     test "테스트00" do
-      assert(Solution.answer() == "foobar")
+      input = []
+      output = []
+      assert(Solution.answer(input) == output)
     end
 
     test "테스트01" do
-      assert(1 == 1)
+      input = []
+      output = []
+      assert(Solution.answer(input) == output)
+    end
+  end
+
+  describe "최종 테스트" do
+    test "최종 테스트00" do
+      input = []
+      output = []
+      assert(Solution.answer(input) == output)
     end
   end
 end
