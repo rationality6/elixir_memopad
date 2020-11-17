@@ -25,3 +25,25 @@ end
 # |> IO.inspect()
 # |> Enum.to_list()
 # |> IO.inspect()
+
+누산 = []
+누산 = [0 | [1 | [2 | 누산]]]
+IO.inspect(누산)
+
+Enum.reduce(1..10, [], fn a, acc -> [a | acc] end)
+|> Enum.reverse()
+|> IO.inspect()
+
+a = {:name, "Miguel Palhas"}
+
+list2 = [
+  {:name, "Miguel Palhas"},
+  {:email, "miguel@example.com"}
+]
+|> Enum.at(0)
+|>
+|> IO.inspect()
+
+누산 = []
+누산 =  누산 ++ [1]
+IO.inspect(누산)

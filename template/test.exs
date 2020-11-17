@@ -13,6 +13,11 @@ defmodule SolutionTest do
   use ExUnit.Case
   require Solution
 
+  defp testing(nums, value, exps) do
+    result = Solution.answer(nums, value)
+    assert result == exps
+  end
+
   describe "유닛 테스트" do
     test "테스트00" do
       input = []
