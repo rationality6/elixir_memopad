@@ -13,30 +13,33 @@ defmodule SolutionTest do
   use ExUnit.Case
   require Solution
 
-  defp testing(nums, value, exps) do
-    result = Solution.answer(nums, value)
-    assert result == exps
+  defp testing(func, nums, value, exp) do
+    result = func.(nums, value)
+    assert(result == exp)
   end
 
   describe "유닛 테스트" do
     test "테스트00" do
+      func0 = &Solution.answer/2
       input = []
       output = []
-      assert(Solution.answer(input) == output)
+      testing(func0, input, output)
     end
 
     test "테스트01" do
+      func0 = &Solution.answer/2
       input = []
       output = []
-      assert(Solution.answer(input) == output)
+      testing(func0, input, output)
     end
   end
 
   describe "최종 테스트" do
     test "최종 테스트00" do
+      func0 = &Solution.answer/2
       input = []
       output = []
-      assert(Solution.answer(input) == output)
+      testing(func0, input, output)
     end
   end
 end
