@@ -1,6 +1,7 @@
 defmodule ShoppingList do
   use GenServer
 
+  # 클라이언트
   def start_link() do
     GenServer.start_link(__MODULE__, [])
   end
@@ -40,6 +41,7 @@ defmodule ShoppingList do
   end
 
   def handle_call(:view, _from, list) do
+    IO.inspect(list)
     {:reply, list, list}
   end
 
@@ -47,3 +49,9 @@ defmodule ShoppingList do
     {:ok, list}
   end
 end
+
+{:ok, pid} = ShoppingList.start_link()
+ShoppingList.add(pid, "양파")
+ShoppingList.add(pid, "당근")
+ShoppingList.add(pid, "감자")
+ShoppingList.view(pid) |> IO.inspect()
