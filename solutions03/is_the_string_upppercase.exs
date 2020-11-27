@@ -4,7 +4,10 @@ defmodule Solution do
     to see whether the string
     is ALL CAPS. For example:
   """
-  def answer(str) do
+  def answer?(str) do
+    str == String.upcase(str)
+  end
+  def answer?(str) do
     str == String.upcase(str)
   end
 end
@@ -17,13 +20,13 @@ defmodule SolutionTest do
 
   describe "유닛 테스트" do
     test "테스트00" do
-      assert upper_case?("") == true
-      assert upper_case?("c") == false
-      assert upper_case?("C") == true
-      assert upper_case?("hello I AM DONALD") == false
-      assert upper_case?("HELLO I AM DONALD") == true
-      assert upper_case?("ACSKLDFJSgSKLDFJSKLDFJ") == false
-      assert upper_case?("ACSKLDFJSGSKLDFJSKLDFJ") == true
+      assert Solution.answer?("") == true
+      assert Solution.answer?("c") == false
+      assert Solution.answer?("C") == true
+      assert Solution.answer?("hello I AM DONALD") == false
+      assert Solution.answer?("HELLO I AM DONALD") == true
+      assert Solution.answer?("ACSKLDFJSgSKLDFJSKLDFJ") == false
+      assert Solution.answer?("ACSKLDFJSGSKLDFJSKLDFJ") == true
     end
   end
 end
