@@ -5,7 +5,7 @@ defmodule Solution do
     is ALL CAPS. For example:
   """
   def answer(str) do
-    "foobar"
+    str == String.upcase(str)
   end
 end
 
